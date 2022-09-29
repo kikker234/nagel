@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@500&family=Roboto:wght@300&display=swap');
+
+:root {
+    --primary-font: "Reem Kufi Fun";
+    --secondary-font: "Roboto";
+
+    --primary-color: #FF017E;
+    --primary-color-dark: #bd005e;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--primary-font);
+    padding: 0;
+    margin: 0;
+}
+
+p, li {
+    font-family: var(--secondary-font);
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 0 10vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    padding: 10px;
+    color: white;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    color: black;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header ul * {
+    padding: 5px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+header ul li:hover:not(.current) {
+    transition: 250ms background-color;
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color-dark);
+}
+
+header ul .current {
+    color: white;
+    background-color: var(--primary-color);
+    cursor: default;
+}

@@ -1,0 +1,58 @@
+body {
+    max-width: 1920px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+}
+
+header, section {
+    padding-inline: 10vw;
+}
+
+header > * {
+    width: 100%;
+}
+
+header > .text {
+    text-align: center;
+}
+
+/* WORK SECTION */
+.work {
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+.work > article {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.work > article > h2, p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.work > article > p {
+    top: 40px;
+    opacity: 0;
+}
+
+.work > article > img {
+    width: 100%;
+}
+
+.work > article:hover > h2 {
+    background-color: rgba(var(--primary-color), .4);
+    height: 100%;
+}
+
+.work > article:hover > p {
+    opacity: 1;
+}
