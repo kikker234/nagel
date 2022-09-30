@@ -1,10 +1,18 @@
+body {
+    background: rgb(212, 212, 212);
+}
+
 section {
     margin-inline: 10vw;
 }
 
 .work-grid {
     display: grid;
-    gap: 10px;
+}
+
+article {
+    padding: 7px;
+    perspective: 2000px;
 }
 
 .flip {
@@ -15,6 +23,7 @@ section {
 }
 
 .front, .back {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     width: 100%;
     height: 100%;
 }
@@ -30,14 +39,14 @@ p {
     padding: 10px;
 }
 
-.front > img{
+.front img{
     width: 100%;
     height: 100%;
 }
 
 @media (min-width: 750px) {
     .work-grid {
-        grid-template-columns: repeat(4, 25%);
+        grid-template-columns: repeat(4, 24%);
     }
 
     .flip {
@@ -78,13 +87,19 @@ p {
 }
 
 @media (max-width: 750px) {
+    .front, .back {
+        box-shadow: 0 0 0 white;
+    }
+
     .work-grid {
         display: flex;
         flex-direction: column;
+        font-size: vw;
     }
 
     .flip {
         display: flex;
+        height: 25vh;
     }
 
     article:nth-child(odd) .flip {
@@ -93,5 +108,52 @@ p {
 
     article:nth-child(even) .flip {
         flex-direction: row-reverse;
+        color: white;
     }
+    
+    article:nth-child(even) .back {
+        background-color: var(--primary-color);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    article:nth-child(odd) .back {
+        background-color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    article:nth-child(odd) img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    article:nth-child(even) img {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.cta {
+    text-align: center;
+    margin-block: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+}
+
+.cta button {
+    margin-top: 5px;
+    border: 1px solid var(--primary-color);
+    padding: 4px 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 0 var(--primary-color);
+    translate: 0 -8px;
+    transition: translate 250ms, box-shadow 250ms;
+}
+
+.cta button:hover {
+    cursor: pointer;
+    translate: 0 0px;
+    box-shadow: 0 2px 0 var(--primary-color-dark);
 }

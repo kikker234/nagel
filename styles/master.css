@@ -28,6 +28,8 @@ p, li {
 a {
     color: inherit;
     text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 
 header {
@@ -39,6 +41,7 @@ header {
 }
 
 header h1 {
+    font-size: 2vw;
     padding: 10px;
     color: white;
 }
@@ -54,7 +57,7 @@ header ul {
 }
 
 header ul * {
-    padding: 5px 30px;
+    padding: 5px 20px;
     font-size: 18px;
     border-radius: 5px;
 }
@@ -70,4 +73,172 @@ header ul .current {
     color: white;
     background-color: var(--primary-color);
     cursor: default;
+}
+
+header button {
+    display: none;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+@media (max-width: 1250px) {
+    header h1 {
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header button:active {
+        animation: headerAnimation 250ms forwards;
+    }
+
+    header button:not(:active) {
+        animation: headerAnimation 250ms reverse forwards;
+    }
+}
+
+@keyframes headerAnimation {
+    form {
+        display: none;
+        color: red;
+    }
+
+    to {
+        display: block;
+        color: blue;
+        font-size: 10vw;
+    }
+}
+
+footer {
+    padding: 2vw;
+    margin: 0;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+footer .social-media li:not(:first-child) {
+    display: grid;
+    grid-template-columns: 30px 100px;
+    justify-content: center;
+    margin-bottom: 4px;
+    gap: 10px;
+}
+
+footer .social-media li:not(:first-child):hover {
+    font-size: 20px;
+    transition: font-size 250ms;
+    cursor: pointer;
+}
+
+footer ul li:first-child {
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.hamburger {
+    margin: auto;
+    display: none;
+    justify-content:space-between;
+    flex-direction: column;
+    height: 50px;
+    width: 50px;
+}
+
+.hamburger > * {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.hamburger:hover > .middle {
+    animation: removeMiddle 500ms forwards ease-in-out;
+}
+
+.hamburger:hover > .top {
+    animation: topper 500ms forwards ease-in-out;
+}
+
+.hamburger:hover > .bottom {
+    animation: bot 500ms forwards ease-in-out;
+}
+
+@keyframes removeMiddle {
+    from {
+        border: 2px solid white;
+        background-color: white;
+        position: static;
+    }
+
+    to {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid white;
+    }
+}
+
+@keyframes topper {
+    from {
+        top: 0;
+        rotate: 0;
+        translate: 0 0;
+    }
+
+    to {
+        translate: 0 25px;
+        rotate: 45deg;
+        background-color: rgb(162, 0, 0);
+    }
+}
+
+@keyframes bot {
+    from {
+        top: 0;
+        rotate: 0;
+        translate: 0 0;
+    }
+
+    to {
+        translate: 0 -25px;
+        rotate: -45deg;
+        background-color: rgb(162, 0, 0);
+    }
+}
+
+@media (max-width: 750px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger:hover > header ul {
+        display: block;
+    }
 }
