@@ -82,6 +82,15 @@ header button {
     background: transparent;
 }
 
+hr {
+    border-top: 1px solid var(--primary-color);
+    margin-inline: 10px;
+}
+
+.phone {
+    display: none;
+}
+
 @media (max-width: 1250px) {
     header h1 {
         font-size: 22px;
@@ -109,17 +118,30 @@ header button {
     }
 }
 
-@keyframes headerAnimation {
-    form {
-        display: none;
-        color: red;
-    }
+.cta {
+    text-align: center;
+    margin-block: 10px;
+    padding-block: 10px;
+    padding-inline: 0;
+    margin-inline: 15vw;
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+}
 
-    to {
-        display: block;
-        color: blue;
-        font-size: 10vw;
-    }
+.cta button {
+    margin-top: 15px;
+    border: 1px solid var(--primary-color);
+    padding: 4px 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 0 var(--primary-color);
+    translate: 0 -8px;
+    transition: translate 250ms, box-shadow 250ms;
+}
+
+.cta button:hover {
+    cursor: pointer;
+    translate: 0 0px;
+    box-shadow: 0 2px 0 var(--primary-color-dark);
 }
 
 footer {
@@ -232,6 +254,15 @@ footer ul li:first-child {
 @media (max-width: 750px) {
     footer {
         flex-direction: column;
+    }
+
+    .phone {
+        display: block;
+    }
+
+    .cta {
+        padding-inline: 0;
+        border: none;
     }
 
     .hamburger {

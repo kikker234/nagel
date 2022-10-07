@@ -1,58 +1,118 @@
 body {
-    max-width: 1920px;
-    margin: auto;
+    min-height: 100vh;
+    background-color: #d5d5d5;
 }
 
-header {
+section {
+    padding-inline: 15vw;
+}
+
+i {
+    color: var(--primary-color);
+    font-size: 7vw;
+}
+
+.landing {
+    background: var(--primary-color);
+    height: 100vh;
     display: flex;
-}
-
-header, section {
-    padding-inline: 10vw;
-}
-
-header > * {
-    width: 100%;
-}
-
-header > .text {
-    text-align: center;
-}
-
-/* WORK SECTION */
-.work {
-    height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3, 33%);
-}
-
-.work > article {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.work > article > h2, p {
-    position: absolute;
-    width: 100%;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
 
-.work > article > p {
-    top: 40px;
-    opacity: 0;
+.landing > * {
+    animation: fadeIn 500ms;
 }
 
-.work > article > img {
+.welcome {
+    background-color: white;
+    position: relative;
+    margin-inline: 15vw;
+    padding: 20px;
+    text-align: center;
+    height: 100px;
+    top: -70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px;
+}
+
+.info {
+    padding-block: 20px;
+    color: white;
+    background-color: var(--primary-color);
+    display: flex;
+}
+
+.info > * {
+    padding: 10px;
+}
+
+.info img {
     width: 100%;
+    border-radius: 10px;
 }
 
-.work > article:hover > h2 {
-    background-color: rgba(var(--primary-color), .4);
-    height: 100%;
+@media (max-width: 750px) {
+    body {
+        background-color: white;
+    }
+
+    i {
+        font-size: 3em;
+    }
+
+    .welcome {
+        position: static;
+        top: 0;
+        background-color: inherit;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+
+    img {
+        width: auto;
+        height: auto;
+    }
 }
 
-.work > article:hover > p {
-    opacity: 1;
+@media (max-width: 500px) {
+    .text {
+        text-align: center;
+    }
+
+    .icons {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        filter: blur(5px);
+        translate: 0 -10px;
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0px);
+        translate: 0 0;
+    }
 }
