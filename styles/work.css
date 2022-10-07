@@ -1,5 +1,5 @@
 body {
-    background: rgb(212, 212, 212);
+    background: rgb(226, 226, 226);
 }
 
 section {
@@ -87,10 +87,6 @@ p {
 }
 
 @media (max-width: 750px) {
-    .front, .back {
-        box-shadow: 0 0 0 white;
-    }
-
     .work-grid {
         display: flex;
         flex-direction: column;
@@ -122,6 +118,10 @@ p {
         border-bottom-right-radius: 10px;
     }
 
+    article img {
+        display: block;
+    }
+
     article:nth-child(odd) img {
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -135,7 +135,6 @@ p {
 
 @media (max-width: 500px) {
     article:nth-child(even) .flip, article:nth-child(odd) .flip { 
-        gap: 0;
         flex-direction: column;
         height: fit-content;
     }
