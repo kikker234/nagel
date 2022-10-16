@@ -5,7 +5,7 @@
     --secondary-font: "Roboto";
 
     --primary-color: #FF017E;
-    --primary-color-dark: #bd005e;
+    --primary-color-dark: #880044;
 }
 
 body {
@@ -31,6 +31,8 @@ a {
     padding: 0;
     margin: 0;
 }
+
+/* HEADER */
 
 header {
     background-color: var(--primary-color);
@@ -144,6 +146,7 @@ hr {
     box-shadow: 0 2px 0 var(--primary-color-dark);
 }
 
+/* FOOTER */
 footer {
     padding: 2vw;
     margin: 0;
@@ -161,9 +164,6 @@ footer ul {
 }
 
 footer .social-media li:not(:first-child) {
-    display: grid;
-    grid-template-columns: 30px 100px;
-    justify-content: center;
     margin-bottom: 4px;
     gap: 10px;
 }
@@ -172,6 +172,11 @@ footer .social-media li:not(:first-child):hover {
     font-size: 20px;
     transition: font-size 250ms;
     cursor: pointer;
+}
+
+footer ul {
+    width: fit-content;
+    margin: auto;
 }
 
 footer ul li:first-child {
@@ -254,6 +259,7 @@ footer ul li:first-child {
 @media (max-width: 750px) {
     footer {
         flex-direction: column;
+        justify-content: center;
     }
 
     .phone {
