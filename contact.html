@@ -11,6 +11,24 @@
     <title>Contact | Nails For You</title>
 </head>
 <body>
+    <header>
+        <div class="hamburger-container">
+            <div class="hamburger">
+                <div class="top"></div>
+                <div class="middle"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+        
+        <h1>Nails for you</h1>
+
+        <ul>
+            <li><a href="/nagel">Home</a></li>
+            <li class="current"><a href="">Nagels</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </header>
+
     <section>
         <h1>Contact</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum porro dolore nihil eligendi assumenda non sapiente nam architecto deserunt quam minus expedita, ut vitae nobis officia sit temporibus voluptatem sint reprehenderit perspiciatis quaerat? Perferendis odit quis nemo! Repellendus laudantium nihil, ipsam, ducimus earum maxime nemo consequuntur consequatur illo nostrum aliquam!</p>
@@ -20,32 +38,70 @@
         <h2>Formulier:</h2>
         <form action="">
             
-            <fieldset>
-                <input type="text" placeholder="Voornaam" required>
-                <input type="text" placeholder="Tussenvoegsel">
-                <input type="text" placeholder="Achternaam" required>
+            <!-- Stap 1 -->
+            <input type="radio" id="form-step-1" name="progress" checked>
+            <fieldset class="show-when-checked">
+                <div class="">
+                    <div class="form-content">
+                        <input type="text" placeholder="Voornaam" required>
+                        <input type="text" placeholder="Tussenvoegsel">
+                        <input type="text" placeholder="Achternaam" required>
+                    </div>
+                    <label class="next" for="form-step-2">></label>
+                </div>
             </fieldset>
-    
-            <input type="text" class="col-3" class="email" placeholder="Email" required>
             
+            
+            <!-- Stap 2 -->
+            <input type="radio" id="form-step-2" name="progress">
             <fieldset>
-                <input type="text" class="col-2" placeholder="Adres">
-                <input type="text" class="col-1" placeholder="huisnummer">
-                <input type="text" placeholder="Woonplaats" class="col-2">
-                <input type="text" placeholder="Postcode" class="col-1">
+                <div class="">
+                    <label class="prev" for="form-step-1">&lt;</label>
+                    
+                    <div class="form-content">
+                        <input type="text" class="col-3" class="email" placeholder="Email" required>
+                        <input type="text" class="col-3" class="nummer" placeholder="Telefoonnummer" required>
+                    </div>
+                    
+                    <label class="next" for="form-step-3">&gt;</label>
+                </div>
             </fieldset>
+            
+            <!-- Stap 3 -->
+            <input type="radio" id="form-step-3" name="progress">
+            <fieldset>
+                <div class="">
+                    <label class="prev" for="form-step-2">&lt;</label>
+                    
+                    <div class="form-content">
+                        <input type="text" class="col-2" placeholder="Adres">
+                        <input type="text" class="col-1" placeholder="huisnummer">
+                        <input type="text" placeholder="Woonplaats" class="col-2">
+                        <input type="text" placeholder="Postcode" class="col-1">
+                    </div>
+                    
+                    <label class="next" for="form-step-4">&gt;</label>
+                </div>
+            </fieldset>
+            
+            <!-- Stap 4 -->
+            <input type="radio" id="form-step-4" name="progress">
+            <fieldset>
+                <div class="">
+                    <label class="prev" for="form-step-3">&lt;</label>
 
-            <div class="select">
-                <select name="Contact type" id="">
-                    <option value="">Afspraak maken</option>
-                    <option value="">Afspraak wijzigen</option>
-                    <option value="">Klacht</option>
-                    <option value="">Anders</option>
-                </select>
-            </div>
-
-            <textarea class="col-3" name="" id="" cols="30" rows="10"></textarea>
-            <input class="col-3" type="submit">
+                    <div class="form-content">
+                        <select name="Contact type" id="">
+                            <option value="">Afspraak maken</option>
+                            <option value="">Afspraak wijzigen</option>
+                            <option value="">Klacht</option>
+                            <option value="">Anders</option>
+                        </select>
+        
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </fieldset>
         </form>
     </section>
 
@@ -55,7 +111,19 @@
     </section>
 
     <footer>
-        Idk
+        <ul class="adres">
+            <li><h2>Adres</h2></li>
+            <li>Sint Jan Straat 52</li>
+            <li>5282AB, Boxtel</li>
+            <li>Nederland</li>
+        </ul>
+    
+        <ul class="social-media">
+            <li><h2>Social media</h2></li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>Facebook</li>
+        </ul>
     </footer>
 </body>
 </html>

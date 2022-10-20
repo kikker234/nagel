@@ -1,0 +1,44 @@
+section {
+    padding: 15vw;
+}
+
+.grid {
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 4fr);
+    grid-template-rows: repeat(3, 3fr);
+}
+
+.grid > * {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+section .grid .home {
+    grid-area: 1 / 1 / span 2 / span 2;
+    height: 100%;
+    color: blue;
+}
+
+section .grid .contact {
+    grid-area: 2 / 3 / span 2 / span 2;
+    height: 100%;
+    color: blue;
+}
+
+@media (max-width: 480px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .grid > * {
+        height: 100px;
+    }
+}

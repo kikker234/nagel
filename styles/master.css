@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-p, li {
+p, li, th, td {
     font-family: var(--secondary-font);
     padding: 0;
     margin: 0;
@@ -51,7 +51,7 @@ header h1 {
 header ul {
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
     display: flex;
     list-style-type: none;
     padding: 0;
@@ -59,21 +59,23 @@ header ul {
 }
 
 header ul * {
-    padding: 5px 20px;
+    padding: 5px 15px;
+    margin-inline: 5px;
     font-size: 18px;
     border-radius: 5px;
 }
 
 header ul li:hover:not(.current) {
-    transition: 250ms background-color;
+    transition: 250ms background-color, 250ms color;
     cursor: pointer;
-    color: white;
-    background-color: var(--primary-color-dark);
+    color: var(--primary-color);
+    background-color: white;
 }
 
 header ul .current {
-    color: white;
-    background-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: white;
+    font-weight: bold;
     cursor: default;
 }
 
@@ -104,21 +106,34 @@ hr {
 @media (max-width: 750px) {
     header {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        width: fit-content;
+    }
+
+    header .hambuger {
+        width: fit-content;
     }
 
     header ul {
         display: none;
     }
 
-    header button:active {
-        animation: headerAnimation 250ms forwards;
-    }
-
-    header button:not(:active) {
-        animation: headerAnimation 250ms reverse forwards;
+    header .hamburger-container:hover ~ ul {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        z-index: 5;
     }
 }
+
+/* HEADER END */
 
 .cta {
     text-align: center;
@@ -171,6 +186,7 @@ footer ul {
     display: none;
     justify-content:space-between;
     flex-direction: column;
+    padding: 10px;
     height: 50px;
     width: 50px;
 }
@@ -181,16 +197,30 @@ footer ul {
     background-color: white;
 }
 
-.hamburger:hover > .middle {
+.hambuger:hover ~ ul {
+    display: block;
+}
+
+.hamburger:hover .middle {
     animation: removeMiddle 500ms forwards ease-in-out;
 }
 
-.hamburger:hover > .top {
+.hamburger:hover .top {
     animation: topper 500ms forwards ease-in-out;
 }
 
-.hamburger:hover > .bottom {
-    animation: bot 500ms forwards ease-in-out;
+.hamburger .bottom {
+    top: 0;
+    rotate: 0;
+    translate: 0 0;
+}
+
+.hamburger:hover .bottom {
+    /* animation: bot 500ms forwards ease-in-out; */
+    translate: 0 -24px;
+    rotate: -45deg;
+    background-color: rgb(162, 0, 0);
+    transition: all 500ms ease-in-out;
 }
 
 @keyframes removeMiddle {
@@ -217,7 +247,7 @@ footer ul {
     }
 
     to {
-        translate: 0 25px;
+        translate: 0 24px;
         rotate: 45deg;
         background-color: rgb(162, 0, 0);
     }
@@ -238,6 +268,10 @@ footer ul {
 }
 
 @media (max-width: 750px) {
+    .hamburger {
+        display: flex;
+    }
+    
     footer {
         flex-direction: column;
         justify-content: center;
@@ -250,13 +284,5 @@ footer ul {
     .cta {
         padding-inline: 0;
         border: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hamburger:hover > header ul {
-        display: block;
     }
 }
