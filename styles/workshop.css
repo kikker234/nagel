@@ -22,3 +22,37 @@ th {
 table, th, td {
     border: 1px solid white;
 }
+
+.more-info {
+    display: flex;
+    margin-block: 20px
+}
+
+.more-info:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+
+.text h3 {
+    text-align: center;
+}
+
+.more-info img {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .more-info, .more-info:nth-child(even) {
+        flex-direction: column;
+    }
+}
