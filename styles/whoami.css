@@ -1,0 +1,26 @@
+section {
+    padding-inline: 15vw;
+}
+
+article > * {
+    width: 100%;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    align-items: center;
+}
+
+article img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    article {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

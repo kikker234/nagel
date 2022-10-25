@@ -36,7 +36,6 @@ table, th, td {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
     padding: 10px;
 }
 
@@ -51,7 +50,7 @@ table, th, td {
     object-fit: cover;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
     .more-info, .more-info:nth-child(even) {
         flex-direction: column;
     }
