@@ -19,7 +19,7 @@ article {
 }
 
 article .text {
-    padding: 20px;
+    padding: 10px;
 }
 
 article:nth-child(even) {
@@ -36,5 +36,9 @@ article img {
 @media (max-width: 480px) {
     article {
         display: block;
+    }
+
+    article img {
+        width: 100%;
     }
 }

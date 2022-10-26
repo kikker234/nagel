@@ -50,6 +50,7 @@ fieldset {
 fieldset div {
     display: grid;
     grid-template-columns: 50px auto 50px;
+    min-height: 30vh;
 }
 
 .next {
