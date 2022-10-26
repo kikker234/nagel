@@ -111,6 +111,10 @@ img {
     border-radius: 15px;
 }
 
+.beurs .list {
+    justify-content: start;
+}
+
 @media (max-width: 1024px) {
     body {
         background-color: white;
