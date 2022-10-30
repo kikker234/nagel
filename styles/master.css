@@ -103,30 +103,44 @@ header ul li ul li:last-child:hover .sublist li:hover {
 }
 
 @media (max-width: 480px) {
-    header h1 {
+    header {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
 
     header ul {
-        background-color: red;
-        text-align: center;
+        padding: 0;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     header ul li {
-        display: flex;
-        justify-content: center;
+        width: fit-content;
         text-align: center;
-        background-color: blue;
+        background-color: white;
+        color: var(--primary-color);
+        font-weight: bold;
+        width: 100vw;
+        padding-block: 5px;
     }
 
     header ul li ul li:last-child:hover {
-        width: 100%;
+        width: 100vw;
     }
 
     header .sublist {
         left: 0;
-        top: 0;
-        width: 100%;
+        top: 10px;
+        width: 100vw;
+    }
+
+    header .sublist li {
+        background-color: white;
     }
 
     header, header ul {
