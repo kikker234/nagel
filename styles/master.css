@@ -129,18 +129,18 @@ header ul li ul li:last-child:hover .sublist li:hover {
         padding-block: 5px;
     }
 
-    header ul li ul li:last-child:hover {
+    header ul li ul li:last-child:hover .sublist {
         width: 100vw;
-    }
-
-    header .sublist {
         left: 0;
-        top: 10px;
-        width: 100vw;
+        top: 30px;
     }
 
     header .sublist li {
         background-color: white;
+        right: 0;
+        left: auto;
+        text-align: center;
+        width: 100vw;
     }
 
     header, header ul {
