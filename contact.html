@@ -12,26 +12,35 @@
 </head>
 <body>
     <header>
-        <div class="hamburger-container">
-            <div class="hamburger">
-                <div class="top"></div>
-                <div class="middle"></div>
-                <div class="bottom"></div>
-            </div>
-        </div>
         
         <h1>Nails for you</h1>
 
         <ul>
             <li><a href="/nagel">Home</a></li>
-            <li class="current"><a href="">Nagels</a></li>
-            <li><a href="">Contact</a></li>
+            <li class="current"><a href="">Wie ben ik</a></li>
+
+            <li class="dropdown-title">
+                Meer
+                
+                    <ul class="dropdown-content">
+                        <li>Navigatie</li>
+                        <li><a href="">Contact</a></li>
+                        <li>
+                            Werk
+                            <ul class="sublist">
+                                <a href="./work.html#nail-art"><li>Nail art</li></a>
+                                <a href="./work.html#normale-kleuren"><li>Normale kleuren</li></a>
+                                <a href="./work.html#gel"><li>Gel nagels</li></a>
+                            </ul>
+                        </li>
+                    </ul>
+            </li>
         </ul>
     </header>
 
     <section>
         <h1>Contact</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum porro dolore nihil eligendi assumenda non sapiente nam architecto deserunt quam minus expedita, ut vitae nobis officia sit temporibus voluptatem sint reprehenderit perspiciatis quaerat? Perferendis odit quis nemo! Repellendus laudantium nihil, ipsam, ducimus earum maxime nemo consequuntur consequatur illo nostrum aliquam!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, non ducimus! Recusandae sit aspernatur libero.</p>
     </section>
     
     <section class="form-container">
@@ -47,7 +56,7 @@
                         <input type="text" placeholder="Tussenvoegsel">
                         <input type="text" placeholder="Achternaam" required>
                     </div>
-                    <label class="next" for="form-step-2">></label>
+                    <label class="next" for="form-step-2">&#8594;</label>
                 </div>
             </fieldset>
             
@@ -56,14 +65,14 @@
             <input type="radio" id="form-step-2" name="progress">
             <fieldset>
                 <div class="">
-                    <label class="prev" for="form-step-1">&lt;</label>
+                    <label class="prev" for="form-step-1">&#8592;</label>
                     
                     <div class="form-content">
                         <input type="text" class="col-3" class="email" placeholder="Email" required>
                         <input type="text" class="col-3" class="nummer" placeholder="Telefoonnummer" required>
                     </div>
                     
-                    <label class="next" for="form-step-3">&gt;</label>
+                    <label class="next" for="form-step-3">&#8594;</label>
                 </div>
             </fieldset>
             
@@ -71,7 +80,7 @@
             <input type="radio" id="form-step-3" name="progress">
             <fieldset>
                 <div class="">
-                    <label class="prev" for="form-step-2">&lt;</label>
+                    <label class="prev" for="form-step-2">&#8592;</label>
                     
                     <div class="form-content">
                         <input type="text" class="col-2" placeholder="Adres">
@@ -80,7 +89,7 @@
                         <input type="text" placeholder="Postcode" class="col-1">
                     </div>
                     
-                    <label class="next" for="form-step-4">&gt;</label>
+                    <label class="next" for="form-step-4">&#8594;</label>
                 </div>
             </fieldset>
             
@@ -88,7 +97,7 @@
             <input type="radio" id="form-step-4" name="progress">
             <fieldset>
                 <div class="">
-                    <label class="prev" for="form-step-3">&lt;</label>
+                    <label class="prev" for="form-step-3">&#8592;</label>
 
                     <div class="form-content">
                         <select name="Contact type" id="">
@@ -99,6 +108,8 @@
                         </select>
         
                         <textarea name="" id="" cols="30" rows="10"></textarea>
+                        
+                        <input type="Submit" value="Formulier verzenden!">
                     </div>
                 </div>
             </fieldset>

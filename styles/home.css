@@ -112,7 +112,33 @@ img {
 }
 
 .beurs .list {
+    margin-block: 10px;
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    display: grid;
     justify-content: start;
+    width: 75%;
+}
+
+.beurs .list ul {
+    margin: 0;
+    list-style-type: "- ";
+    padding-inline: 20px;
+}
+
+.look {
+    margin-block: 20px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.look a {
+    display: flex;
+    justify-self: center;
+    width: fit-content;
 }
 
 @media (max-width: 1024px) {
@@ -132,8 +158,14 @@ img {
         box-shadow: none;
     }
 
-    .info {
-        flex-direction: column;
+    .info img {
+        width: 100%;
+    }
+
+    .beurs .list {
+        background-color: var(--primary-color);
+        color: white;
+        width: 100%;
     }
 
     .beurs img {
@@ -149,6 +181,15 @@ img {
     .icons {
         flex-direction: column;
         gap: 30px;
+    }
+
+    .info {
+        flex-direction: column;
+    }
+    
+    .info img {
+        border-radius: 15px;
+        width: 40%;
     }
 
     .beurs {

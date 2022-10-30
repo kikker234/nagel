@@ -6,12 +6,15 @@
 
     --primary-color: #FF017E; 
     --primary-color-dark: #880044;
+
+    --header-inline-padding: 15px;
 }
 
 body {
     padding: 0;
     margin: 0;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-p, li, th, td {
+p, li, th, td, i {
     font-family: var(--secondary-font);
     padding: 0;
     margin: 0;
@@ -36,102 +39,100 @@ a {
 /* HEADER */
 
 header {
-    background-color: var(--primary-color);
-    padding: 0 10vw;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-header h1 {
-    font-size: 2vw;
-    padding: 10px;
+    justify-content: space-around;
+    background-color: var(--primary-color);
     color: white;
 }
 
 header ul {
+    text-align: center;
     display: flex;
-    align-items: center;
-    color: white;
-    display: flex;
+    justify-content: space-around;
     list-style-type: none;
+}
+
+header ul li {
+    padding-inline: 10px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+header ul li:last-child:hover ul:not(.sublist), header ul li ul:hover:not(.sublist) {
+	position: absolute;
+    transition: all 0.5s ease;
+    background-color: white;
+	left: 0;
+    display: block;
+}
+
+.sublist {
+    display: none;
+}
+
+header ul li ul {
     padding: 0;
     margin: 0;
-}
-
-header ul * {
-    padding: 5px 15px;
-    margin-inline: 5px;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-header ul li:hover:not(.current) {
-    transition: 250ms background-color, 250ms color;
-    cursor: pointer;
-    color: var(--primary-color);
-    background-color: white;
-}
-
-header ul .current {
-    color: var(--primary-color);
-    background-color: white;
-    font-weight: bold;
-    cursor: default;
-}
-
-header button {
-    display: none;
-    outline: none;
-    border: none;
-    background: transparent;
-}
-
-hr {
-    border-top: 1px solid var(--primary-color);
-    margin-inline: 10px;
-}
-
-.phone {
+    color: black;
     display: none;
 }
 
-@media (max-width: 1250px) {
+header ul li ul li:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+header ul li ul li:last-child:hover .sublist {
+    display: block;
+    position: absolute;
+    left: -150px;
+    background-color: white;
+    width: 150px;
+    top: 0;
+}
+
+header ul li ul li:last-child:hover .sublist li, header ul li ul li {
+    padding: 5px;
+}
+
+header ul li ul li:last-child:hover .sublist li:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 480px) {
     header h1 {
-        font-size: 22px;
         text-align: center;
-        width: 100%;
-    }
-}
-
-@media (max-width: 750px) {
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header h1 {
-        width: fit-content;
-    }
-
-    header .hambuger {
-        width: fit-content;
     }
 
     header ul {
-        display: none;
+        background-color: red;
+        text-align: center;
     }
 
-    header .hamburger-container:hover ~ ul {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: white;
-        z-index: 5;
+    header ul li {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background-color: blue;
     }
+
+    header ul li ul li:last-child:hover {
+        width: 100%;
+    }
+
+    header .sublist {
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    header, header ul {
+        flex-direction: column;
+    }
+
 }
 
 /* HEADER END */
@@ -146,7 +147,7 @@ hr {
     border: 2px solid var(--primary-color);
 }
 
-button {
+button, input[type=submit] {
     margin-top: 15px;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -157,20 +158,20 @@ button {
     transition: translate 250ms, box-shadow 250ms;
 }
 
-button.white {
+button.white, input[type=submit].white {
     border: 1px solid white;
     box-shadow: 0 10px 0 white;
     color: white;
     background-color: var(--primary-color);
 }
 
-button:hover {
+button:hover, input[type=submit]:hover {
     cursor: pointer;
     translate: 0 0px;
     box-shadow: 0 2px 0 var(--primary-color-dark);
 }
 
-button.white:hover {
+button.white:hover, input[type=submit].white:hover {
     border: 1px solid white;
     box-shadow: 0 2px 0 white;
 }
@@ -179,9 +180,6 @@ button.white:hover {
 /* FOOTER */
 footer {
     padding: 2vw;
-    bottom: 0;
-    position: absolute;
-    width: calc(100vw - 4vw);
     margin: 0;
     background-color: var(--primary-color);
     display: flex;

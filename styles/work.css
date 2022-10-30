@@ -2,8 +2,8 @@ body {
     background: rgb(226, 226, 226);
 }
 
-section {
-    margin-inline: 10vw;
+section, h2 {
+    padding-inline: 15vw;
 }
 
 .work-grid {
@@ -36,7 +36,7 @@ article {
 }
 
 p {
-    padding: 10px;
+    padding-block: 10px;
 }
 
 .front img{
